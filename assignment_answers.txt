@@ -1,0 +1,48 @@
+ASSIGNMENT 2 — THE BOOKSTORE INTELLIGENCE MISSION
+Source: https://books.toscrape.com/
+Scope: first 5 catalogue pages; 100 unique product listings
+
+MISSION 1 — RECONNAISSANCE
+Title: article.product_pod h3 a — full title is in the title attribute.
+Price: article.product_pod p.price_color — remove the pound symbol and convert to float.
+Rating: article.product_pod p.star-rating — star count is stored in a class (One to Five).
+Availability: article.product_pod p.instock.availability — clean the whitespace and read stock status.
+
+MISSIONS 2 AND 3 — DATA COLLECTION
+The script used requests, BeautifulSoup and pandas to collect 100 books across 5 pages.
+It saved competitor_books.csv with clean prices, numeric 1–5 ratings, availability and product URLs.
+
+MISSION 4 — INTELLIGENCE ANALYSIS
+1. Most expensive: The Death of Humanity: and the Case for Life — £58.11.
+2. Cheapest: Patience — £10.16.
+3. Average price: £34.56.
+4. Five-star books: 19.
+5. Books in stock: 100 of 100 (100.0%).
+6. Top five highest-rated books (ties settled by lowest price):
+   1. Princess Between Worlds (Wide-Awake Princess #5) — 5 stars — £13.34
+   2. Princess Jellyfish 2-in-1 Omnibus, Vol. 01 (Princess Jellyfish 2-in-1 Omnibus #1) — 5 stars — £13.61
+   3. Sophie's World — 5 stars — £15.94
+   4. Thirst — 5 stars — £17.27
+   5. Set Me Free — 5 stars — £17.46
+7. Cheapest five-star book: Princess Between Worlds (Wide-Awake Princess #5) — £13.34.
+
+FINAL CHALLENGE — THE CEO HAS £100
+Chosen books (one copy per title):
+- Sophie's World — £15.94 — 5 stars
+- Untitled Collection: Sabbath Poems 2014 — £14.27 — 4 stars
+- Thirst — £17.27 — 5 stars
+- Princess Jellyfish 2-in-1 Omnibus, Vol. 01 (Princess Jellyfish 2-in-1 Omnibus #1) — £13.61 — 5 stars
+- Princess Between Worlds (Wide-Awake Princess #5) — £13.34 — 5 stars
+- Patience — £10.16 — 3 stars
+- Mama Tried: Traditional Italian Cooking for the Screwed, Crude, Vegan, and Tattooed — £14.02 — 4 stars
+Total cost: £98.61
+Total star rating score: 31
+Money left: £1.39
+Method: exact 0/1 knapsack, optimizing total star points without exceeding £100.
+
+MISSION DEBRIEF — BUSINESS RECOMMENDATION
+I would start by considering Princess Between Worlds (Wide-Awake Princess #5) because it has a five-star rating and costs only £13.34, compared with an average catalogue price of £34.56. There are 19 five-star books and 100.0% of the books are listed as in stock, so I would compare the well-rated affordable titles before deciding what to test in our store.
+
+IMPORTANT LIMITATION
+Books to Scrape is a practice site. Its ratings and prices are randomly assigned, not real customer feedback.
+These findings demonstrate the method rather than establish actual consumer demand.
